@@ -51,19 +51,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Application.cs" />
+    <Compile Include="Application\Transaction.cs" />
     <Compile Include="Geometry\Dynamic\ElementTransformUtils\Copy.cs" />
     <Compile Include="Geometry\Dynamic\ElementTransformUtils\Mirror.cs" />
     <Compile Include="Geometry\Dynamic\ElementTransformUtils\Move.cs" />
     <Compile Include="Geometry\Dynamic\ElementTransformUtils\Rotate.cs" />
-    <Compile Include="Geometry\Dynamic\Location\Compose.cs" />
+    <Compile Include="Geometry\Dynamic\Location\ComposeLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\Direction.cs" />
     <Compile Include="Geometry\Dynamic\Location\Down.cs" />
     <Compile Include="Geometry\Dynamic\Location\Left.cs" />
     <Compile Include="Geometry\Dynamic\Location\Right.cs" />
     <Compile Include="Geometry\Dynamic\Location\Rotate.cs" />
     <Compile Include="Geometry\Dynamic\Location\Up.cs" />
+    <Compile Include="Geometry\Dynamic\Transform\ComposeTransform.cs" />
+    <Compile Include="Geometry\Dynamic\Transform\localCoordinateSystem.cs" />
+    <Compile Include="Geometry\Dynamic\Transform\ReturnAngle.cs" />
+    <Compile Include="Geometry\Dynamic\Transform\Transform.cs" />
     <Compile Include="Geometry\Project\Central.cs" />
     <Compile Include="Geometry\Project\Normal.cs" />
+    <Compile Include="Geometry\Static\BoundingBox.cs" />
     <Compile Include="Geometry\Static\Solid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
