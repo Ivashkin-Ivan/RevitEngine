@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Geometry.Dynamic
+namespace Tools.Geometry.Dynamic.Transform
 {
-    class Compose
+    internal class ComposeTransform
     {
     }
 }

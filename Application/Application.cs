@@ -1,5 +1,6 @@
 ﻿using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI;
+using Autodesk.Revit.DB;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -75,17 +76,10 @@ namespace Tools.Application
                 LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
             });
             
-            locationPanel.AddItem(new PushButtonData(nameof(Compose), "Композиция команд", assemblyLocation, typeof(Compose).FullName)
+            locationPanel.AddItem(new PushButtonData(nameof(ComposeLocation), "Композиция команд", assemblyLocation, typeof(ComposeLocation).FullName)
             {
                 LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
             });
-
-
-
-
-
-
-
 
             return Result.Succeeded;
         }
