@@ -38,9 +38,6 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
             Plane plane = Plane.CreateByNormalAndOrigin(XYZ.BasisX, new XYZ(20, 0, 0));
 
 
-            // Задаётся конечное положение
-            //=====================================
-
 
             using (Transaction transaction = new Transaction(doc))
             {
