@@ -11,5 +11,6 @@ namespace Tools.Geometry.Static
     [RegenerationAttribute(RegenerationOption.Manual)]
     internal class BoundingBox
     {
+
     }
 }

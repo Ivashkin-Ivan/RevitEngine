@@ -59,7 +59,6 @@
     <Compile Include="Geometry\Dynamic\Location\ComposeLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\MoveLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\RotateLocation.cs" />
-    <Compile Include="Geometry\Dynamic\TransformSamples\ComposeTransform.cs" />
     <Compile Include="Geometry\Dynamic\TransformSamples\LocalCoordinateSystem.cs" />
     <Compile Include="Geometry\Dynamic\TransformSamples\ReturnAngle.cs" />
     <Compile Include="Geometry\Dynamic\TransformSamples\TransformSample.cs" />

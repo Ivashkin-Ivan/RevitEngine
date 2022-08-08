@@ -11,5 +11,7 @@ namespace Tools.Geometry.Project
     [RegenerationAttribute(RegenerationOption.Manual)]
     class Central
     {
+        // 1) По каким объектам строить?
+        // 2) Точка схода?
     }
 }
