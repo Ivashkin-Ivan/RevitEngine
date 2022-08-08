@@ -80,7 +80,14 @@ namespace Tools.Application
             {
                 LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
             });
-            //dddп
+
+
+
+
+
+
+
+
             return Result.Succeeded;
         }
     }

@@ -19,7 +19,7 @@ namespace Tools.Application
             var doc = commandData.Application.ActiveUIDocument.Document;
             
             //Взять транзакцию отсюда
-            //=====================================================
+            //======================================================
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");
@@ -28,7 +28,7 @@ namespace Tools.Application
 
                 transaction.Commit();
             }
-            //=====================================================
+            //======================================================
             return Result.Succeeded;
         }
     }
