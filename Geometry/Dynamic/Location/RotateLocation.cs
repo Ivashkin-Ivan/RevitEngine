@@ -9,7 +9,7 @@ namespace Tools.Geometry.Dynamic
 {
     [TransactionAttribute(TransactionMode.Manual)]
     [RegenerationAttribute(RegenerationOption.Manual)]
-    class RotateETU
+    class RotateLocation
     {
     }
 }

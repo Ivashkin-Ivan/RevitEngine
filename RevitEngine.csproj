@@ -58,7 +58,7 @@
     <Compile Include="Geometry\Dynamic\ElementTransformUtilsMethods\RotateETU.cs" />
     <Compile Include="Geometry\Dynamic\Location\ComposeLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\MoveLocation.cs" />
-    <Compile Include="Geometry\Dynamic\Location\RotateETU.cs" />
+    <Compile Include="Geometry\Dynamic\Location\RotateLocation.cs" />
     <Compile Include="Geometry\Dynamic\Transform\ComposeTransform.cs" />
     <Compile Include="Geometry\Dynamic\Transform\localCoordinateSystem.cs" />
     <Compile Include="Geometry\Dynamic\Transform\ReturnAngle.cs" />

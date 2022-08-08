@@ -45,7 +45,7 @@ namespace Tools.Application
                     LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "icon5.png"))
                 });
            
-            locationPanel.AddItem(new PushButtonData(nameof(RotateETU), "Поворот на заданный угол", assemblyLocation, typeof(RotateETU).FullName)
+            locationPanel.AddItem(new PushButtonData(nameof(RotateLocation), "Поворот на заданный угол", assemblyLocation, typeof(RotateLocation).FullName)
             {
                 LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
             });
