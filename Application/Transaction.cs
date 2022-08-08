@@ -16,10 +16,20 @@ namespace Tools.Application
     {   
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            var doc = commandData.Application.ActiveUIDocument.Document;
-            
-            //Взять транзакцию отсюда
+            //Transaction
             //=====================================
+            
+            var doc = commandData.Application.ActiveUIDocument.Document;
+            //Put your code here
+            //=====================================
+
+
+
+
+
+
+
+            //====================================
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");

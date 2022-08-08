@@ -12,11 +12,38 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtils
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            
-            
-            
-            
-           
+            //Transaction
+            //=====================================
+
+            var doc = commandData.Application.ActiveUIDocument.Document;
+            //Put your code here
+            //=====================================
+
+
+
+
+
+
+
+
+
+
+            //====================================
+            using (Transaction transaction = new Transaction(doc))
+            {
+                transaction.Start("transaction");
+
+
+
+                transaction.Commit();
+            }
+            //=====================================
+
+
+
+
+
+            return Result.Succeeded;
         }
     }
 }
