@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 {
-    [TransactionAttribute(TransactionMode.Manual)]
-    [RegenerationAttribute(RegenerationOption.Manual)]
-    class Rotate : IExternalCommand
+[TransactionAttribute(TransactionMode.Manual)]
+[RegenerationAttribute(RegenerationOption.Manual)]
+    class MoveETU : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -32,24 +32,21 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 
             XYZ locationPoint = (cube.Location as LocationPoint).Point;
 
+            XYZ translation = new XYZ(250, 250, 0);
 
+          
 
-
-            // Задаётся угол и ось вращения
+            // Задаётся ось вращения и угол в радианах, дополнительно, для понимания изобразим дугу
             //=====================================
 
-            Line rotationAxis = Line.CreateBound(new XYZ(0 ,0 ,0),(new XYZ(0, 0, 0) + new XYZ(0, 0, 1)));
-
-            var angle = Math.PI/4;            //Задайте угол в радианах
-            
-            // Вращение против часовой стрелки, в правой системе координат
 
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");
 
+                ElementTransformUtils.MoveElement(doc, cube.Id, translation);
 
-                ElementTransformUtils.RotateElement(doc, cube.Id, rotationAxis, angle);
+                //doc.Create.NewDetailCurveArray(activeView, curves); //закомментил кривую
 
                 transaction.Commit();
             }
@@ -57,5 +54,6 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 
             return Result.Succeeded;
         }
+
     }
 }

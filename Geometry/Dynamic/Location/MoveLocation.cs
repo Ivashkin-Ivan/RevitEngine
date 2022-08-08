@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
+namespace Tools.Geometry.Dynamic
 {
-[TransactionAttribute(TransactionMode.Manual)]
-[RegenerationAttribute(RegenerationOption.Manual)]
-    class Move : IExternalCommand
+    [TransactionAttribute(TransactionMode.Manual)]
+    [RegenerationAttribute(RegenerationOption.Manual)]
+    class MoveLocation : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -30,23 +30,21 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 
             View activeView = doc.ActiveView;
 
-            XYZ locationPoint = (cube.Location as LocationPoint).Point;
+            LocationPoint location = cube.Location as LocationPoint;
 
-            XYZ translation = new XYZ(250, 250, 0);
+            XYZ locationPoint = location.Point;
 
-          
+            XYZ down = new XYZ(0, -250, 0); // вектор задающий направление смещения, а не новое положение как в случае с ElementTransformUtils;
 
-            // Задаётся ось вращения и угол в радианах, дополнительно, для понимания изобразим дугу
+            
             //=====================================
 
 
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");
-
-                ElementTransformUtils.MoveElement(doc, cube.Id, translation);
-
-                //doc.Create.NewDetailCurveArray(activeView, curves); //закомментил кривую
+                
+                location.Move(down);
 
                 transaction.Commit();
             }

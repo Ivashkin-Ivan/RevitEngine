@@ -9,8 +9,7 @@ namespace Tools.Geometry.Dynamic
 {
     [TransactionAttribute(TransactionMode.Manual)]
     [RegenerationAttribute(RegenerationOption.Manual)]
-    class Left
+    class RotateETU
     {
-
     }
 }

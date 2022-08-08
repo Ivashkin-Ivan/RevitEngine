@@ -1,16 +1,10 @@
 ﻿using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.DB;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using Tools.Geometry.Dynamic;
-using Tools.Geometry.Dynamic.Location;
 
 namespace Tools.Application
 {
@@ -46,32 +40,12 @@ namespace Tools.Application
 
 
 
-            locationPanel.AddItem(new PushButtonData(nameof(Down), "Вниз", assemblyLocation, typeof(Down).FullName)
+            locationPanel.AddItem(new PushButtonData(nameof(MoveLocation), "Вниз", assemblyLocation, typeof(MoveLocation).FullName)
                 {
                     LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "icon5.png"))
                 });
-            
-            locationPanel.AddItem(new PushButtonData(nameof(Up), "Вверх", assemblyLocation, typeof(Up).FullName)
-            {
-                LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "icon6.png"))
-            });
-            
-            locationPanel.AddItem(new PushButtonData(nameof(Left), "Влево", assemblyLocation, typeof(Left).FullName)
-            {
-                LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "icon4.png"))
-            });
-            
-            locationPanel.AddItem(new PushButtonData(nameof(Right), "Вправо", assemblyLocation, typeof(Right).FullName)
-            {
-                LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "icon3.png"))
-            });
-
-            locationPanel.AddItem(new PushButtonData(nameof(Direction), "Произвольное направление", assemblyLocation, typeof(Direction).FullName)
-            {
-                LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
-            });
-
-            locationPanel.AddItem(new PushButtonData(nameof(Rotate), "Поворот на заданный угол", assemblyLocation, typeof(Rotate).FullName)
+           
+            locationPanel.AddItem(new PushButtonData(nameof(RotateETU), "Поворот на заданный угол", assemblyLocation, typeof(RotateETU).FullName)
             {
                 LargeImage = new BitmapImage(new Uri(iconsDirectoryPath + "blue.png"))
             });
