@@ -32,21 +32,19 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 
             XYZ locationPoint = (cube.Location as LocationPoint).Point;
 
-            XYZ translation = new XYZ(250, 250, 0);
+            XYZ translation = new XYZ(250, 0, 0); // задаёт вектор смещения
 
           
 
-            // Задаётся ось вращения и угол в радианах, дополнительно, для понимания изобразим дугу
-            //=====================================
+            
 
 
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                 ElementTransformUtils.MoveElement(doc, cube.Id, translation);
 
-                //doc.Create.NewDetailCurveArray(activeView, curves); //закомментил кривую
 
                 transaction.Commit();
             }

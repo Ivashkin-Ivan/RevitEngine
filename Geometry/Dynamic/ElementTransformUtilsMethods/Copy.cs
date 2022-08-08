@@ -31,10 +31,8 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 
             XYZ locationPoint = (cube.Location as LocationPoint).Point;
 
-            XYZ translation = new XYZ(250, 250, 0);
+            XYZ translation = new XYZ(250, 0, 0); //Задаёт направление смещения;
 
-
-            // Задаётся конечное положение
             //=====================================
 
 
@@ -42,9 +40,9 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
             {
                 transaction.Start("transaction");
 
-                
 
-           
+                ElementTransformUtils.CopyElement(doc, cube.Id, translation);
+
 
                 transaction.Commit();
             }

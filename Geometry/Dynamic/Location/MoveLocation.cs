@@ -34,7 +34,7 @@ namespace Tools.Geometry.Dynamic
 
             XYZ locationPoint = location.Point;
 
-            XYZ down = new XYZ(0, -250, 0); // вектор задающий направление смещения, а не новое положение как в случае с ElementTransformUtils;
+            XYZ down = new XYZ(200, 0, 0); // вектор задающий направление смещения
 
             
             //=====================================

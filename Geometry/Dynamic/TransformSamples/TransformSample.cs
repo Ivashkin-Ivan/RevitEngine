@@ -43,6 +43,12 @@ namespace Tools.Geometry.Dynamic.TransformSamples
             Transform compose1 = transform1 * transform2;
             Transform compose2 = transform2 * transform1;
 
+            // Трансформ в минус первой стпени
+
+            var instance = cube as Instance;
+
+            Transform inverse = instance.GetTotalTransform().Inverse;
+
             var listid = new List<ElementId>();
             listid.Add(cube.Id);
 
@@ -59,13 +65,12 @@ namespace Tools.Geometry.Dynamic.TransformSamples
 
                 //ElementTransformUtils.CopyElements(doc, listid, doc, transform2, new CopyPasteOptions()); //С углом тоже работает
 
-                ElementTransformUtils.CopyElements(doc, listid, doc, compose1, new CopyPasteOptions()); // Повороты образуют не коммутативную группу
+                ElementTransformUtils.CopyElements(doc, listid, doc, inverse, new CopyPasteOptions()); // Повороты образуют не коммутативную группу
                 
                 //ElementTransformUtils.CopyElements(doc, listid, doc, compose2, new CopyPasteOptions());
                 
                 //Пока для начала можно взять правило, что каждый новый transform строится от нового базиса.
 
-                
                
                 transaction.Commit();
             }
