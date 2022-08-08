@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Tools.Geometry.Dynamic
 {
+    [TransactionAttribute(TransactionMode.Manual)]
+    [RegenerationAttribute(RegenerationOption.Manual)]
     class Left
     {
 

@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace Tools.Application
 {
 
-    [Transaction(TransactionMode.Manual)]
+    [TransactionAttribute(TransactionMode.Manual)]
+    [RegenerationAttribute(RegenerationOption.Manual)]
 
     internal class TransactionRevit : IExternalCommand
     {   

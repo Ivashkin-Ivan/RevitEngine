@@ -1,4 +1,5 @@
-﻿using Autodesk.Revit.DB;
+﻿using Autodesk.Revit.Attributes;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Tools.Geometry.Dynamic.ElementTransformUtils
 {
+    [TransactionAttribute(TransactionMode.Manual)]
+    [RegenerationAttribute(RegenerationOption.Manual)]
     class Copy : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
@@ -16,6 +19,8 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtils
             //======================================
 
             var doc = commandData.Application.ActiveUIDocument.Document;
+
+            
             //Put your code here
             //======================================
 
@@ -28,7 +33,10 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtils
 
 
 
+            
             //=====================================
+
+
             using (Transaction transaction = new Transaction(doc))
             {
                 transaction.Start("transaction");
