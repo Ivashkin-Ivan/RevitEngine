@@ -66,10 +66,9 @@
     <Compile Include="Geometry\Project\Normal.cs" />
     <Compile Include="Geometry\Static\BoundingBox.cs" />
     <Compile Include="Geometry\Static\Solid.cs" />
+    <Compile Include="Parameters\ChooseElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Parameters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
