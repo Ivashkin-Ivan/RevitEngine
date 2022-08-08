@@ -9,7 +9,7 @@ namespace Tools.Geometry.Dynamic.Transform
 {
     [TransactionAttribute(TransactionMode.Manual)]
     [RegenerationAttribute(RegenerationOption.Manual)]
-    internal class localCoordinateSystem
+    internal class LocalCoordinateSystem
     {
     }
 }
