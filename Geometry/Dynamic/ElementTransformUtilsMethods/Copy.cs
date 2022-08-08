@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Geometry.Dynamic.ElementTransformUtils
+namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 {
     [TransactionAttribute(TransactionMode.Manual)]
     [RegenerationAttribute(RegenerationOption.Manual)]
@@ -20,20 +20,26 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtils
 
             var doc = commandData.Application.ActiveUIDocument.Document;
 
-            
+
             //Put your code here
             //======================================
+            FamilyInstance cube = new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance))
+                                                                    
+                                                                    .Cast<FamilyInstance>()
+                                                                    .Last(it => it.Symbol.FamilyName == "SampleFamily1.rvt" && it.Symbol.Name == "кубик");
 
+            View activeView = doc.ActiveView;
 
+            XYZ locationPoint = (cube.Location as LocationPoint).Point;
 
+            XYZ translation = new XYZ(250, 250, 0);
 
+            var line = Line.CreateBound(locationPoint, translation);
 
+            var curves = new CurveArray();
+            curves.Append(line);
 
-
-
-
-
-            
+            // Задаётся конечное положение
             //=====================================
 
 
@@ -41,15 +47,13 @@ namespace Tools.Geometry.Dynamic.ElementTransformUtils
             {
                 transaction.Start("transaction");
 
+                ElementTransformUtils.CopyElement(doc, cube.Id, translation);
 
+                //doc.Create.NewDetailCurveArray(activeView, curves); //закомментил кривую
 
                 transaction.Commit();
             }
             //======================================
-
-
-
-
 
             return Result.Succeeded;
         }

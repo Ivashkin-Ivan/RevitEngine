@@ -52,10 +52,10 @@
   <ItemGroup>
     <Compile Include="Application\Application.cs" />
     <Compile Include="Application\Transaction.cs" />
-    <Compile Include="Geometry\Dynamic\ElementTransformUtils\Copy.cs" />
-    <Compile Include="Geometry\Dynamic\ElementTransformUtils\Mirror.cs" />
-    <Compile Include="Geometry\Dynamic\ElementTransformUtils\Move.cs" />
-    <Compile Include="Geometry\Dynamic\ElementTransformUtils\Rotate.cs" />
+    <Compile Include="Geometry\Dynamic\ElementTransformUtilsMethods\Copy.cs" />
+    <Compile Include="Geometry\Dynamic\ElementTransformUtilsMethods\Mirror.cs" />
+    <Compile Include="Geometry\Dynamic\ElementTransformUtilsMethods\Move.cs" />
+    <Compile Include="Geometry\Dynamic\ElementTransformUtilsMethods\Rotate.cs" />
     <Compile Include="Geometry\Dynamic\Location\ComposeLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\Direction.cs" />
     <Compile Include="Geometry\Dynamic\Location\Down.cs" />

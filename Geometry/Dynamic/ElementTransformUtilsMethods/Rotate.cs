@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Geometry.Dynamic.ElementTransformUtils
+namespace Tools.Geometry.Dynamic.ElementTransformUtilsMethods
 {
     [TransactionAttribute(TransactionMode.Manual)]
     [RegenerationAttribute(RegenerationOption.Manual)]
-    class Move
+    class Rotate
     {
     }
 }
