@@ -17,13 +17,15 @@ namespace Tools.Parameters
         {
             var doc = commandData.Application.ActiveUIDocument.Document;
 
-            var list = new FilteredElementCollector(doc).OfClass(typeof(FamilySymbol)).Cast<FamilySymbol>().Where(it => it.FamilyName == "Колонна прямоугольного сечения").ToList();
-            
-            var listFamily = new FilteredElementCollector(doc).OfClass(typeof(Family)).Cast<Family>().Where(it => it.)
+            //var list = new FilteredElementCollector(doc).OfClass(typeof(FamilySymbol)).Cast<FamilySymbol>().Where(it => it.FamilyName == "Колонна прямоугольного сечения").ToList();
 
+            var list2 = new FilteredElementCollector(doc).OfClass(typeof(FamilySymbol))
+                                                                                            .Cast<FamilySymbol>()
+                                                                                            .Where(it => it.FamilyName == "Стол")
+                                                                                            .ToList();
             var listId = new List<ElementId>();
 
-            foreach (var element in list)
+            foreach (var element in list2)
             {
                 listId.Add(element.Id);
             }
@@ -32,12 +34,10 @@ namespace Tools.Parameters
             {
                 transaction.Start("transaction");
 
-               //doc.Delete(listId);
+                doc.Delete(listId);
 
                 transaction.Commit();
             }
-
-
 
             return Result.Succeeded;
         }
