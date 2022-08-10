@@ -64,11 +64,13 @@
     <Compile Include="Geometry\Dynamic\TransformSamples\TransformSample.cs" />
     <Compile Include="Geometry\Project\Central.cs" />
     <Compile Include="Geometry\Project\Normal.cs" />
-    <Compile Include="Geometry\Static\BoundingBox.cs" />
-    <Compile Include="Geometry\Static\Solid.cs" />
+    <Compile Include="Geometry\Static\BoundingBoxSample.cs" />
+    <Compile Include="Geometry\Static\Solids.cs" />
     <Compile Include="Parameters\ChooseElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

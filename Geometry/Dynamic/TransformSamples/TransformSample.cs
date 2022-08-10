@@ -36,7 +36,7 @@ namespace Tools.Geometry.Dynamic.TransformSamples
             
             Transform transform1 = Transform.CreateRotation(XYZ.BasisZ, angle);
 
-            XYZ vector = new XYZ(0,1000, 0); //Пока не понятно это смещение или новые координаты
+            XYZ vector = new XYZ(0,1000, 0); //Пока не понятно это смещение или новые координаты //Это смещение
 
             Transform transform2 = Transform.CreateTranslation(vector);
 
