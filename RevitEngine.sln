@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitEngine", "RevitEngine.csproj", "{504666EC-595F-4D60-BD3A-D0D6AC8DE72F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalCoordinateSystem", "..\LocalCoordinateSystem\LocalCoordinateSystem.csproj", "{C097ABEE-523F-44F3-97D7-F08482A2AD39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{504666EC-595F-4D60-BD3A-D0D6AC8DE72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504666EC-595F-4D60-BD3A-D0D6AC8DE72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504666EC-595F-4D60-BD3A-D0D6AC8DE72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C097ABEE-523F-44F3-97D7-F08482A2AD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C097ABEE-523F-44F3-97D7-F08482A2AD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C097ABEE-523F-44F3-97D7-F08482A2AD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C097ABEE-523F-44F3-97D7-F08482A2AD39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

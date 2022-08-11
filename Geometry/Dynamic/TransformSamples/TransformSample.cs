@@ -24,15 +24,15 @@ namespace Tools.Geometry.Dynamic.TransformSamples
 
             //Put your code here
             //======================================
-            FamilyInstance cube = new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance))
-                                                                    .Cast<FamilyInstance>()
-                                                                    .Last(it => it.Symbol.FamilyName == "SampleFamily1.rvt" && it.Symbol.Name == "кубик");
+            //FamilyInstance cube = new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance))
+            //                                                        .Cast<FamilyInstance>()
+            //                                                        .Last(it => it.Symbol.FamilyName == "SampleFamily1.rvt" && it.Symbol.Name == "кубик");
 
 
 
             //Создаю экземпляр трансформаций
 
-            var angle = Math.PI / 4; // Угол, на который будет происходить поворот
+            var angle = Math.PI / 6; // Угол, на который будет происходить поворот
             
             Transform transform1 = Transform.CreateRotation(XYZ.BasisZ, angle);
 
@@ -40,17 +40,24 @@ namespace Tools.Geometry.Dynamic.TransformSamples
 
             Transform transform2 = Transform.CreateTranslation(vector);
 
+
             Transform compose1 = transform1 * transform2;
             Transform compose2 = transform2 * transform1;
+            var basis0 = transform1.get_Basis(0);
+            var basis1 = transform1.get_Basis(1);
+            var basis2 = transform1.get_Basis(2);
+            
+
+
 
             // Трансформ в минус первой стпени
 
-            var instance = cube as Instance;
+            //var instance = cube as Instance;
 
-            Transform inverse = instance.GetTotalTransform().Inverse;
+           // Transform inverse = instance.GetTotalTransform().Inverse;
 
             var listid = new List<ElementId>();
-            listid.Add(cube.Id);
+           // listid.Add(cube.Id);
 
             // Задаётся конечное положение
             //======================================
@@ -65,7 +72,7 @@ namespace Tools.Geometry.Dynamic.TransformSamples
 
                 //ElementTransformUtils.CopyElements(doc, listid, doc, transform2, new CopyPasteOptions()); //С углом тоже работает
 
-                ElementTransformUtils.CopyElements(doc, listid, doc, inverse, new CopyPasteOptions()); // Повороты образуют не коммутативную группу
+               // ElementTransformUtils.CopyElements(doc, listid, doc, inverse, new CopyPasteOptions()); // Повороты образуют не коммутативную группу
                 
                 //ElementTransformUtils.CopyElements(doc, listid, doc, compose2, new CopyPasteOptions());
                 

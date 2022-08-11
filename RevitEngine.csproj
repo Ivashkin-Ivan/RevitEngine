@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2021\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -42,12 +43,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Application.cs" />
@@ -59,18 +62,30 @@
     <Compile Include="Geometry\Dynamic\Location\ComposeLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\MoveLocation.cs" />
     <Compile Include="Geometry\Dynamic\Location\RotateLocation.cs" />
-    <Compile Include="Geometry\Dynamic\TransformSamples\LocalCoordinateSystem.cs" />
     <Compile Include="Geometry\Dynamic\TransformSamples\ReturnAngle.cs" />
     <Compile Include="Geometry\Dynamic\TransformSamples\TransformSample.cs" />
     <Compile Include="Geometry\Project\Central.cs" />
     <Compile Include="Geometry\Project\Normal.cs" />
     <Compile Include="Geometry\Static\BoundingBoxSample.cs" />
     <Compile Include="Geometry\Static\Solids.cs" />
+    <Compile Include="LocalCoordinateSystem\ExternalCommand\Command.cs" />
+    <Compile Include="LocalCoordinateSystem\View\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Parameters\ChooseElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="LocalCoordinateSystem\Command\" />
+    <Folder Include="LocalCoordinateSystem\Model\" />
+    <Folder Include="LocalCoordinateSystem\ViewModel\" />
     <Folder Include="User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="LocalCoordinateSystem\View\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
